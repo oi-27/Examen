@@ -1,0 +1,29 @@
+﻿create database examen
+use examen
+
+create table usuario
+(
+	usuarioID int primary key,
+	nombre varchar(100) not null,
+	correoElectronico varchar(100) not null ,
+	telefono varchar(100) not null
+)
+
+create table equipo
+(
+	equipoID int primary key,
+	tipoEquipo varchar(100) not null,
+	modelo varchar(100) not null,
+	usuarioID int not null
+)
+
+insert into usuario (usuarioID, nombre, correoElectronico, telefono)
+values (1, 'Juan', 'juan@gmail', '8883-1233'), 
+       (2, 'Pepe', 'pepe@hotmail', '8563-7653')
+
+insert into equipo (equipoID, tipoEquipo, modelo, usuarioID)
+values (1, 'Tecnico', 'Hybrido', 1),
+	   (2, 'Financiero', 'Virtual', 3)
+
+Select * from usuario
+Select * from equipo
